@@ -21,6 +21,8 @@ public class BukkitJoin extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
+    	/* Can't fire a PluginMessage right after a player joins, there needs to be a delay. 
+    	So schedule a response to Bungee for 20 ticks after join. */
     	BukkitTask task = new NotifyBungee(this, e.getPlayer().getName()).runTaskLater(this, 20);
     	e.setJoinMessage(null);
     }

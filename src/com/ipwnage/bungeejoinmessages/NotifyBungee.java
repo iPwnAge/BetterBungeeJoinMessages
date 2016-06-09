@@ -20,6 +20,7 @@ public class NotifyBungee extends BukkitRunnable {
 
     @Override
     public void run() {
+    	//Reply to Bungee, telling them of a successful user connection.
     	ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF(this._name);
         Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
