@@ -1,0 +1,4 @@
+name: BungeeNoSpamJoinMessages
+main: com.ipwnage.bungeejoinmessages.BungeeJoin
+version: 1.0
+author: Proplex <David Lohle>
