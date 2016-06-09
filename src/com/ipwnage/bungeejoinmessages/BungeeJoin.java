@@ -58,7 +58,11 @@ public class BungeeJoin extends Plugin implements Listener {
     @EventHandler
     public void onPlayerDisconnect(PlayerDisconnectEvent event) {
     	 //Prevents DB from accumulating names of players who unsuccessfully connect to a backend server
-    	_playerDB.remove(event.getPlayer().getName());
+    	String name = event.getPlayer().getName();
+    	_playerDB.remove(name);
+	   	 for (ProxiedPlayer player : ProxyServer.getInstance().getPlayers()) {
+	         player.sendMessage(new TextComponent(ChatColor.YELLOW + name + " left the network."));
+	     }
     }
     
 }
