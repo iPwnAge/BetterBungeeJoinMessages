@@ -26,4 +26,9 @@ public class BukkitJoin extends JavaPlugin implements Listener {
     	BukkitTask task = new NotifyBungee(this, e.getPlayer().getName()).runTaskLater(this, 20);
     	e.setJoinMessage(null);
     }
+    
+    @EventHandler
+    public void onPlayerDisconnect(PlayerJoinEvent e) {
+    	e.setJoinMessage(null);
+    }
 }
