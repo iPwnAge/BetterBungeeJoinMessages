@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -28,7 +29,7 @@ public class BukkitJoin extends JavaPlugin implements Listener {
     }
     
     @EventHandler
-    public void onPlayerDisconnect(PlayerJoinEvent e) {
-    	e.setJoinMessage(null);
+    public void onPlayerQuit(PlayerQuitEvent e) {
+    	e.setQuitMessage(null);
     }
 }
